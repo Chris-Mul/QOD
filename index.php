@@ -5,7 +5,7 @@
  * @package QOD_Starter_Theme
  */
 	?>
-	<div class="container">
+	
 		<?php get_header(); ?>
 
 			<div id="primary" class="content-area">
@@ -39,4 +39,3 @@
 
 		<?php get_footer(); ?>
 
-	</div>

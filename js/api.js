@@ -63,7 +63,7 @@
     
                 }).done(function() {
 
-                    $('f#quote-submission-form').slideUp().find('textarea, input[type="submit"], input[type="text"]').val('');
+                    $('#quote-submission-form').slideUp().find('textarea, input[type="submit"], input[type="text"]').val('');
                     $('.success-msg').text(api_vars.success);
                   
                     // clear the form fields and hide the form

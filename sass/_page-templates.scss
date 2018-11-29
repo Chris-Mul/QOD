@@ -17,9 +17,7 @@ body{
 .site{
     .entry-content{
         font-size: 1.25rem;
-        
     }
-
     .entry-meta{
         // display: inline-flex;
         align-items: baseline;
@@ -66,9 +64,8 @@ body{
      @include desktop{
         margin: 0 auto;
         width: 700px;
-     }
- 
     }
+}
 
 
 .new-quote-button{
@@ -82,8 +79,6 @@ body{
     margin-top:3px;
 } 
 
-
-    
 
 .site-info{
     display: flex;
@@ -101,10 +96,12 @@ body{
         display: inline-flex;
         list-style: none;
         padding: 0;
+        font-size:1.25rem;
         
         ul{
             display:inline-flex;
             list-style:none;
+           
 
 
             li {
@@ -210,9 +207,6 @@ body{
         font-style: italic;
     
     }
-     
-
-    
 }
 
 .page{
@@ -243,6 +237,9 @@ body{
     }
 }
 
+.error404 .button{
+    border:none;
+}
  
 
 
