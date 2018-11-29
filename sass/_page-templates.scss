@@ -1,143 +1,248 @@
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
-
-/* All Archives Page */
-
-/* Submit a Quote Page */
-
-
 body{
-
-        background-color:#222222;
-        color: #fff;
-        font-family: 'Exo';
-        font-size: 1rem;
-        line-height: 1.5;
-        font-weight: 300;
-        width: 100vw;
-        margin:auto;
+    background-color:#222222;
+    color: #fff;
+    font-family: 'Exo';
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
+    padding: 2.5%;
+    margin: 0 auto;
+    max-width: 1080px;
+    padding: 2.5%;
+  
+}
+.site{
+    .entry-content{
+        font-size: 1.25rem;
         
-
-        
-
-
-
-        @include tablet{
-        
-             .site-branding img{
-                max-width:100%;
-                
-            }
-        }
-
-        @include desktop{
-            width:800px
-        }
-
-        p{
-            margin:10px;
-
-        }
-
-        .entry-content{
-         height:20vh;
-        }
-            
-        
-      
-
-    
     }
 
-.site-branding{
-
-    padding:40px 50px 40px 10px;
-}
-
-
-
-.site-footer{
-
-
-        .footer-navigation{
-            
-          
+    .entry-meta{
+        // display: inline-flex;
+        align-items: baseline;
+        padding-left: 10px;
+        
+        p{
+            display: inline-block;
         }
+    }
+
+    .site-content{
+
+        @include desktop {
+            margin: 4.5rem 175px 1.5rem;
+            position: relative;
+
+            &:before {
+            color: #0c0;
+            font-family: 'FontAwesome';
+            font-size: 125px;
+            line-height: 125px;
+            position: absolute;
+            top: 0;
+            content: "\f10d";
+            left: -175px;
+            }
+            &:after{
+                color: #0c0;
+                font-family: FontAwesome;
+                font-size: 125px;
+                line-height: 125px;
+                position: absolute;
+                top: 0;
+                content: "\f10e";
+                right: -175px;
 
 
+            }
+        }
+    } 
+ }  
+ 
+ .site-header{
+     @include desktop{
+        margin: 0 auto;
+        width: 700px;
+     }
+ 
+    }
 
+
+.new-quote-button{
+
+    @include desktop{
+        margin: 3rem auto 0;
+        display: block;
+    }
+}
+.site-branding{
+    margin-top:3px;
+} 
+
+
+    
+
+.site-info{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+
+    @include tablet {
+        flex-wrap: nowrap;
+    }
+    @include desktop{
+        justify-content: flex-end;
+    }
+
+    .main-navigation {
+        display: inline-flex;
+        list-style: none;
+        padding: 0;
+        
         ul{
-
             display:inline-flex;
             list-style:none;
-            margin:0;
-            padding:0;
-            margin-top: 100px;
-            
-
-        li a{
-            border-right: 1px solid #fff;
-            line-height: 1;
-            padding: 0 1rem;
-            text-decoration: none;
-            margin:5px;
-            color:#00cc00;
 
 
+            li {
+                border-right: 1px solid #fff;
+                line-height: 1;
+                padding: 0 5px;
 
-        
-        }}
+                    &:first-child {
+                        padding-left: 0;
+                }
 
-
-        p{      
-            margin:20px;
-
-            a{
-                text-decoration: none;
-                color:#00cc00;
-
+                    &:last-child{
+                        border-right: 1px solid white;
+                    }
+                
+                &:hover {
+                    color: $color__link-hover;
+                }
             }
-    
-        }   
+        }
     }
+    
+    p {
+        flex: 0 1 100%;
+        line-height: 1;
+        font-size: 1rem;
+        margin: 10px;
 
-   .author-links a{
+        @include tablet {
+            flex: 0 1 auto;
+        }
+        a {
+            text-decoration: none;
+            color:#00cc00;
+        }
+    }
+}
+
+.author-links a{
     display:inline-block;
-    padding:10px;
     text-decoration: none;
     color:#00cc00;
     font-family: 'Exo';
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    margin-right: 1.125rem;
+}
+
+.category-links a{
+    display:inline-block;
+    text-decoration: none;
+    color:#00cc00;
+    font-family: 'Exo';
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    margin-right: 1.125rem;
+}
+
+.tags a{
+    display:inline-block;
+    text-decoration: none;
+    color:#00cc00;
+    font-family: 'Exo';
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    margin-right: 1.125rem;
+
+}
 
 
-   }
+// .about {
+//     a{
+//         text-decoration: none;
+//     }
+// }
 
+.archive {
+     .page-title, .search .page-title {
+        border-bottom: 1px dotted #fff;
+        margin-top: 3rem;
+        padding-bottom: 1.5rem;
+    }
 
+    .entry-content  {
+        margin: 1.5rem 0 0;
+      
+        
+        p{
+            font-size: 1.25rem;
+            @include desktop{
+                font-size: 2.5rem;
+            }
+        }
+        
+    }
 
-    .category-links a{
+    .hentry {
+        border-bottom: 1px dotted #fff;
+    }
 
-        display:inline-block;
-        padding:10px;
-        text-decoration: none;
-        color:#00cc00;
-        font-family: 'Exo';
+    .source{
+        font-size: 1.25rem;
+        font-style: italic;
+    
+    }
+     
+
+    
+}
+
+.page{
+   
+    @include tablet{
+        font-size: 1.25rem;
+    }
+    
+    label{
+        font-size: 13px;
+        font-weight: 500;
+        padding-top: 10px;
+        padding-bottom: 5px;
     }
 
 
 
-    .tags a{
-        display:inline-block;
-        padding:10px;
-        text-decoration: none;
-        color:#00cc00;
-        font-family: 'Exo'
-
-
+    .submit-form{
+        display:flex;
+        flex-direction: column;
     }
 
+    .submit-button{
+        margin-top:10px;
+        margin-top: 25px;
+        width: 150px;
+        padding: 10px 10px;
+    }
+}
 
-
-
-
+ 
 
 

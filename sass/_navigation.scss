@@ -5,7 +5,11 @@
 /* Links */
 
 a {
+	text-decoration: none;
+	margin:5px;
+	font-size: 1rem;
 	color: $color__link;
+	
 
 	&:visited {
 		color: $color__link-visited;
@@ -30,10 +34,8 @@ a {
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
 
 	ul {
-		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;

@@ -16,27 +16,27 @@ $source_url = get_post_meta( get_the_ID(), '_qod_quote_source_url',true);
 		<?php the_content(); ?>
 	</div>
 	<div class="entry-meta">
-		<p> - <?php the_title(); ?></p>
+		<p class="entry-title"> - <?php the_title(); ?> , 
 		
+	
+		<?php 
+				
+				//if the source and source url fields are not empty then show them echo in a tag
+				if( $source && $source_url) : ?>
+
+					<span class="source">
+						<a class="sourceUrl" href="<?php echo $source_url ?>"> <?php echo $source ?>
+						</a>
+					</span>
+				<?php //else if the source has content show the source only echo in span ?>
+				<?php elseif ($source) : ?>
+					<span class="source"> <?php echo $source ?></span> 
+				<?php //else show empty span ?>
+				<?php else : ?>    
+					<span></span>
+				<?php endif; ?>
+				</p>
 	</div>
-	<?php 
-			
-			//if the source and source url fields are not empty then show them echo in a tag
-			 if($source && $source_url) : ?>
-				<span class="source">
-					<a class="sourceUrl" href="<?php echo $source_url; ?>">
-						<?php echo $source; ?>
-					</a>
-				</span>
-			<?php //else if the source has content show the source only echo in span ?>
-			<?php elseif ($source) : ?>
-				<span class=""><?php echo $source; ?></span>
-			<?php //else show empty span ?>
-			<?php else : ?>
-				<span></span>
-			<?php endif; ?>
-
-
 	
 </article><!-- #post-## -->
 

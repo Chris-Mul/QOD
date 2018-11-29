@@ -16,11 +16,12 @@ input[type="submit"] {
     font-weight: 700;
     line-height: 1;
 	padding: .75rem 2.25rem;
-	margin-left: 10px;
 
+	
+	
 	&:hover {
-		border-color: #ccc #bbb #aaa;
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+		border-color: $color__link-hover;
+		color: $color__link-hover;
 	}
 
 	&:active,
@@ -37,10 +38,23 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	background-color: #222;
+    border: 2px solid #0c0;
+    border-radius: 3px;
+    color: #0c0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+	padding: .75rem 2.25rem;
+	padding-left: 3px;
+	width: 315px;
+
+	@include tablet{
+		width: 625px;
+	}
+
 
 	&:focus {
 		color: #111;
@@ -53,9 +67,22 @@ input[type="url"],
 input[type="password"],
 input[type="search"] {
 	padding: 3px;
+	background-color: #222;
+    border: 2px solid #0c0;
+    border-radius: 3px;
+    color: #0c0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+	padding: .50rem 2.25rem;
+	width:220px;
+
+	@include tablet{
+		width: 315px;
+
+
+	}
 }
 
-textarea {
-	padding-left: 3px;
-	width: 100%;
-}
+
+

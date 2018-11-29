@@ -23,13 +23,13 @@
                     quoteSource = post._qod_quote_source,
                     quoteSourceUrl = post._qod_quote_source_url;
               
-                  //console.log(quoteSource);
+                  console.log(quoteSource);
                     //update the quote content and name of the quoted peson
                     //maybe use appemnd
-                    
                     $('.entry-content').html(content);
-                    $('.entry-meta').html('<p>' + author + '</p>');
-                    $('.source').html('<a class="sourceUrl" href="' + quoteSourceUrl + '">' + quoteSource + '</a>');
+                    $('.entry-meta').html('<p>— ' + author + ',</p>');
+                    $('.entry-meta').append('<span class="source"><a class="sourceUrl" href="' + quoteSourceUrl + '"> ' + quoteSource + '</a></span>');
+                    
                     
 
                     //display quote source if available
@@ -40,41 +40,49 @@
 
         })       //make the back and forward nav work with the history API
 
+    
+        /* Ajax-based front-end post submissions */
+        $(function() {
+            $('#quote-submission-form').on('submit', function(event) {   
+            event.preventDefault();
+            const data = {
+                title: $('#quote-author').val(),
+                content: $('#quote-content').val(),
+                _qod_quote_source: $('#quote-source').val(),
+                _qod_quote_source_url: $('#quote-source-url').val(),
+                post_status: 'pending'
+              };
+           
+                $.ajax({
+                    method: 'POST',
+                    url: api_vars.root_url + 'wp/v2/posts',
+                    data: data,
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader( 'X-WP-Nonce', api_vars.nonce );
+                    }
+    
+                }).done(function() {
 
-  
-
-    /*Ajax-based front-end post submission*/
-    // $(function(){
-
-    //     $({
-    //         method: 'POST',
-    //         url: api_vars.root_url + 'wp/v2/posts',
-    //         data,
-    //         beforeSend:{
-    //              // ge the code to add a nonce from the documentation,
-    //         }
-    //     }).done(function(){
-    //             //clear the form fields and hide the form
-    //             //use jquery to hide the form in a slidey way
-
-    //             //show success message using the var from functions.php
-
-
+                    $('f#quote-submission-form').slideUp().find('textarea, input[type="submit"], input[type="text"]').val('');
+                    $('.success-msg').text(api_vars.success);
+                  
+                    // clear the form fields and hide the form
+                    //Use jquey so hide the form in a slidey way
+    
+                    //show success message using the var from functions.php
+    
+    
+                }).fail(function() {
+                    $('.sorry-msg').text(api_vars.failure);
+                    // post and alert wih failure var from functions.php
+                })
+            });
+        });
+    
+    })(jQuery);
 
 
-    //     }).fail(function(){
-    //         //post an alert with failure var from functions.php
+    // $('.entry-content').html(content);
 
-
-
-    //     })
-
-
-    // });
-
-
-
-
-
-
-})(jQuery);
+    // $('.entry-meta').html('<p>— ' + author + ',</p>');
+    // $('.entry-meta').append('<span class="source"><a class="sourceUrl" href="' + quoteSourceUrl + '"> ' + quoteSource + '</a></span>');
