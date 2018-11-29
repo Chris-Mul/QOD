@@ -1,6 +1,5 @@
 # Ignore OS files #
 # =============== #
-build
 .DS_Store
 .DS_Store?
 ._*
@@ -24,3 +23,4 @@ ehthumbs.db
 # Ignore packages #
 # =============== #
 node_modules/
+build/
